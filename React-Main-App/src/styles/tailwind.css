@@ -1,0 +1,141 @@
+﻿@import "tailwindcss";
+
+@import "@fontsource/noto-sans/400.css";
+@import "@fontsource/noto-sans/500.css";
+@import "@fontsource/noto-sans/700.css";
+
+@layer base {
+  body {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1rem;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #ebf2fc 0%, #cef8fc 100%);
+  }
+
+  .dark body {
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  }
+}
+
+:root {
+  /* =========================
+     Neutral Colors
+  ========================== */
+
+  --neutral-0: hsl(200, 60%, 99%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-900: hsl(227, 75%, 14%);
+
+  /* =========================
+     Red Colors
+  ========================== */
+
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+
+  /* =========================
+     Semantic Tokens (Light)
+  ========================== */
+
+  --color-surface: var(--neutral-0);
+  --color-surface-alt: var(--neutral-100);
+
+  --color-text-primary: var(--neutral-900);
+  --color-text-secondary: var(--neutral-600);
+  --color-border: var(--neutral-200);
+
+  --color-card: rgba(255, 255, 255, 0.7);
+  --color-card-border: rgba(255, 255, 255, 0.5);
+
+  --color-toggle-off: hsl(0, 0%, 78%);
+  --color-toggle-on: var(--red-500);
+  --color-toggle-mode: var(--color-neutral-200);
+
+  --color-shadow: rgba(17, 24, 39, 0.08);
+
+  /* =========================
+     Background
+  ========================== */
+
+  --background-gradient:
+    radial-gradient(circle at top, rgba(99, 102, 241, 0.08), transparent 30%),
+    linear-gradient(180deg, hsl(210, 35%, 95%) 0%, hsl(180, 20%, 92%) 100%);
+}
+
+/* =========================
+   Dark Theme
+========================== */
+
+.dark {
+  --color-surface: hsl(228, 30%, 12%);
+  --color-surface-alt: hsl(228, 24%, 18%);
+
+  --color-text-primary: hsl(0, 0%, 100%);
+  --color-text-secondary: hsl(220, 14%, 72%);
+
+  --color-border: hsl(228, 20%, 24%);
+
+  --color-card: rgba(24, 31, 54, 0.85);
+  --color-card-border: rgba(255, 255, 255, 0.06);
+
+  --color-toggle-off: hsl(228, 8%, 42%);
+  --color-toggle-on: var(--red-400);
+  --color-toggle-mode: var(--color-neutral-800);
+
+  --color-shadow: rgba(0, 0, 0, 0.35);
+
+  --background-gradient:
+    radial-gradient(circle at top, rgba(99, 102, 241, 0.12), transparent 30%),
+    linear-gradient(180deg, hsl(230, 48%, 10%) 0%, hsl(230, 52%, 8%) 100%);
+}
+
+/* =========================
+   Tailwind Theme Mapping
+========================== */
+
+@theme inline {
+  /* Semantic */
+
+  --color-surface: var(--color-surface);
+  --color-surface-alt: var(--color-surface-alt);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+
+  --color-border: var(--color-border);
+
+  --color-card: var(--color-card);
+  --color-card-border: var(--color-card-border);
+
+  --color-toggle-on: var(--color-toggle-on);
+  --color-toggle-off: var(--color-toggle-off);
+  --color-toggle-mode: var(--color-toggle-mode);
+
+  /* Neutral */
+  --color-neutral-0: var(--neutral-0);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+
+  /* Red */
+
+  --color-red-400: var(--red-400);
+  --color-red-500: var(--red-500);
+  --color-red-700: var(--red-700);
+}
+
+/* =========================
+   Dark Variant
+========================== */
+
+@variant dark (&:where(.dark, .dark *));
