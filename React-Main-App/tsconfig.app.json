@@ -9,7 +9,6 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "ignoreDeprecations": "5.0",
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
